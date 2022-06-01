@@ -1,0 +1,49 @@
+<!doctype html>   <!-- note: code written with utf8, not ANSI, encoding -->
+<html>
+<head>
+	<!-- CORS: http://www.html5rocks.com/en/tutorials/cors/ -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.8/themes/default/style.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree-bootstrap-theme@1.0.1/src/themes/proton/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css"/>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.2/xlsx.full.min.js"></script>
+	
+	<script src="https://docusky.org.tw/DocuSky/js.ui/docusky.ui.manageDbListSimpleUI.js"></script>
+	<script type="text/javascript" src="docuxml.js"></script>
+	<script type="text/javascript" src="tsai.js"></script>
+	<script>
+		const config = {
+			'db_name': 'DB',
+			'corpus': 'from_db',
+			'mapping': {'id': 'filename', '來源系統': 'doc_source', '來源系統縮寫': 'metadata/doc_source', '文件原系統頁面URL': 'metadata/doc_source_href',
+				'題名': 'title', '摘要': 'doc_content', '類目階層': 'metadata/category', '西元年': 'year_for_grouping', '起始時間': 'timeseq_not_before', '結束時間': 'timeseq_not_after',
+				'相關人員': 'metatags/PersonName', '相關地點': 'metatags/PlaceName', '相關組織': 'metatags/Organization', '關鍵詞': 'metatags/Keywords'}
+		};
+		var promise;
+		
+		$(window).on('load', function() {
+			$("#callphp").click(function() {
+				var DocuXML = Vic(null, config);
+				$("#XMLoutput").html(DocuXML["file"]["value"]);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="callphp">Call PHP</button><br>
+	帳號: <input type="password" id="DocuSkyUsername"></input><br>
+	密碼: <input type="password" id="DocuSkyPassword"></input><br>
+	<div style="margin-top: 2em;">
+		<h4>XML 預覽</h4>
+		<xmp id="XMLoutput"></xmp>
+	</div>
+</body>
+</html>
