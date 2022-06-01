@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <BaseHeader @show-sidebar="handleSidebar" />
+    <router-view />
+    <BaseFooter :showSideBar="isShowSideBar" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import BaseHeader from './components/BaseHeader'
+import BaseFooter from './components/BaseFooter'
+// import products from '@/modules/product/store'
 export default {
-  name: 'App',
+  data: () => ({
+    isShowSideBar: false
+  }),
+
   components: {
-    HelloWorld
+    BaseHeader,
+    BaseFooter
+  },
+
+  methods: {
+    handleSidebar(showSideBar) {
+      this.isShowSideBar = showSideBar
+    }
+  },
+
+  created() {
+    // if (! this.$store.hasModule('products')) {
+    // this.$store.registerModule('products', products)
+    // }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
