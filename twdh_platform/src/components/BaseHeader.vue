@@ -1,7 +1,5 @@
 <template>
   <header class="header header--bg">
-    <div class="header__shape">
-    </div>
     <div class="container">
       <div class="navbar">
         <div class="navbar__row">
@@ -22,21 +20,26 @@
                   >平台介紹</router-link
                 >
               </li>
-              <li class="navbar__item navbar__item--has-sub">
-                <a @click.prevent href="" class="navbar__link">Categories</a>
-                <ul class="navbar__subset">
-                  <li class="navbar__item">
-                    <router-link :to="{ name: 'Category' }" class="navbar__link"
-                      >Menu 1</router-link
-                    >
-                  </li>
-                  <li class="navbar__item">
-                    <router-link :to="{ name: 'Category' }" class="navbar__link"
-                      >Menu 2</router-link
-                    >
-                  </li>
-                </ul>
+              <li class="navbar__item">
+                <router-link :to="{ name: 'About' }" class="navbar__link"
+                  >訊息公告</router-link
+                >
+              </li>  
+               <li class="navbar__item">
+                <router-link :to="{ name: 'About' }" class="navbar__link"
+                  >臺灣史料脈絡分析系統</router-link
+                >
               </li>
+              <li class="navbar__item">
+                <router-link :to="{ name: 'About' }" class="navbar__link"
+                  >Opendata Platform</router-link
+                >
+              </li>   
+              <li class="navbar__item">
+                <router-link :to="{ name: 'About' }" class="navbar__link"
+                  >T-DocuSky Platform</router-link
+                >
+              </li>       
             </ul>
           </div>
         </div>

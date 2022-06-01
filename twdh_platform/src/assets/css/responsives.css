@@ -49,9 +49,6 @@
         display: none;
     }
     
-    .overlay--is-active {
-        display: block;
-    }
     
     .header__form {
         width: 100%;

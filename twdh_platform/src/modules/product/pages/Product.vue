@@ -269,10 +269,6 @@ export default {
         { name: 'Phoenix', language: 'Elixir' }
       ],
       slides: [
-        { img: require('@/assets/img/slideshow/1.png') },
-        { img: require('@/assets/img/slideshow/2.png') },
-        { img: require('@/assets/img/slideshow/3.png') },
-        { img: require('@/assets/img/slideshow/4.png') }
       ],
       activeTab: 'compare',
       product: {}

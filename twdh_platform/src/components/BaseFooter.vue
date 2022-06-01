@@ -7,7 +7,6 @@
         </div>
       </div>
     </div>
-    <div class="overlay" :class="{ 'overlay--is-active': showSideBar }"></div>
   </footer>
 </template>
 
