@@ -32,12 +32,12 @@
               </li>
               <li class="navbar__item">
                 <router-link :to="{ name: 'About' }" class="navbar__link"
-                  >Opendata Platform</router-link
+                  >Opendata</router-link
                 >
               </li>   
               <li class="navbar__item">
                 <router-link :to="{ name: 'About' }" class="navbar__link"
-                  >T-DocuSky Platform</router-link
+                  >T-DocuSky</router-link
                 >
               </li>       
             </ul>
