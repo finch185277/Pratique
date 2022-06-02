@@ -749,39 +749,16 @@ ul li {
 }
 
 .footer__team {
-    background: #272727;
+    background: #0f0e0e;
     text-align: center;
     color: rgba(255, 255, 255, .6);
-    padding: 15px 0;
+    padding: 11px 0;
 }
 
 .footer__copy {
     color: #fff;
     margin-top: 0px;
-}
-
-.scroll__top {
-    width: 40px;
-    height: 40px;
-    border-radius: 3px;
-    box-shadow: 0 0 2px #ccc;
-    position: fixed;
-    left: 12px;
-    bottom: 12px;
-    z-index: 111;
-    background: #fff;
-    cursor: pointer;
-    display: none;
-    transform: rotate(-90deg);
-}
-
-.scroll__top::before {
-    content: '\e017';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 20px;
-    transform: translate(-50%, -44%);
+    font-size: 13.7px;
 }
 
 /*page category*/

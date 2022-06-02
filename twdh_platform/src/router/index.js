@@ -1,10 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import cartRoutes from '@/modules/cart/routes'
 import productRoutes from '@/modules/product/routes'
 
 const routes = [
-  ...cartRoutes,
   ...productRoutes
 ]
 
