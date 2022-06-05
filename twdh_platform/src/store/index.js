@@ -1,10 +1,10 @@
 import { createStore } from 'vuex'
 
-import products from '@/modules/product/store'
+// import portals from '@/modules/portal/store'
 
 const store = createStore({
   modules: {
-    products
+    // portals
   }
 })
 

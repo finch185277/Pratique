@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <span  style="margin-left: 50px; margin-bottom: 20px;">  <h1>平台介紹</h1></span>
+    <span  style="margin-left: 40px; margin-bottom: 20px;">  <h2>平台介紹</h2></span>
     <div class="introduction">
       歡迎使用<span style="font-weight: bold">臺灣史料數位人文學術研究平台</span>！<br>
       數位人文是運用數位資源，透過資訊科技，從事人文研究的一個新興研究方法。本平台於 2022 年成立，是臺灣第一個以臺灣史料為主軸建構的數位人文研究平台。
@@ -9,7 +9,7 @@
       並整合 2018 年推出的「DocuSky 數位人文學術研究平台」，提供臺灣史料研究個人化數位環境設施和一站式整合的數位人文服務。				
     </div>
     
-    <span  style="margin-left: 50px; margin-top: 5%; margin-bottom: 20px;">  <h1>教學文件</h1></span>
+    <span  style="margin-left: 40px; margin-top: 5%; margin-bottom: 20px;">  <h2>教學文件</h2></span>
     <div class="introduction">
 			xxx.pdf
     </div>
@@ -19,19 +19,13 @@
 
 <script>
 import { computed } from 'vue'
-import { useStore } from 'vuex'
+// import { useStore } from 'vuex'
 
 export default {
   name: 'About',
 
   setup() {
-    const store = useStore()
-
-    store.dispatch('products/getProducts', '')
-
-    return {
-      products: computed(() => store.state.products.products)
-    }
+    // const store = useStore()
   }
 }
 </script>

@@ -19,24 +19,19 @@
                 <router-link :to="{ name: 'About' }" class="navbar__link"
                   >平台介紹</router-link
                 >
-              </li>
-              <li class="navbar__item">
-                <router-link :to="{ name: 'About' }" class="navbar__link"
-                  >訊息公告</router-link
-                >
-              </li>  
+              </li> 
                <li class="navbar__item">
-                <router-link :to="{ name: 'Material' }" class="navbar__link"
+                <router-link :to="{ name: 'System' }" class="navbar__link"
                   >臺灣史料脈絡分析系統</router-link
                 >
               </li>
               <li class="navbar__item">
-                <router-link :to="{ name: 'About' }" class="navbar__link"
+                <router-link :to="{ name: 'OpendataIndex' }" class="navbar__link"
                   >Opendata</router-link
                 >
               </li>   
               <li class="navbar__item">
-                <router-link :to="{ name: 'About' }" class="navbar__link"
+                <router-link :to="{ name: 'TdocuSkyIndex' }" class="navbar__link"
                   >T-DocuSky</router-link
                 >
               </li>       

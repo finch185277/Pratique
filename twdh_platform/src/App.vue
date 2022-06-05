@@ -9,7 +9,6 @@
 <script>
 import BaseHeader from './components/BaseHeader'
 import BaseFooter from './components/BaseFooter'
-// import products from '@/modules/product/store'
 export default {
   data: () => ({
     isShowSideBar: false
@@ -27,9 +26,6 @@ export default {
   },
 
   created() {
-    // if (! this.$store.hasModule('products')) {
-    // this.$store.registerModule('products', products)
-    // }
   }
 }
 </script>

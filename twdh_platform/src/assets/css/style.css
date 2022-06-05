@@ -527,6 +527,7 @@ ul li {
     white-space: nowrap;
     color: #3a3f43;
     position: relative;
+    font-weight:bold;
 }
 
 .slider__title::before {
@@ -579,18 +580,20 @@ ul li {
     background: #fff;
     padding: 30px 10px;
     border-radius: 3px;
-    text-align: center;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    cursor: pointer; 
+    width: 30%;
+    height: 30%;
 }
 
 .card__image {
-    width: 210px;
-    height: 180px;
+    width: 252px;
+    height: 216px;
     max-width: 100%;
 }
 
@@ -600,39 +603,18 @@ ul li {
 }
 
 .card__title {
-    margin-top: 14px;
-    min-height: 40px;
-    font-size: 12px;
-    line-height: 25px;
-    color: #6c757d;
-}
-
-.card__compare-price {
-    color: #6c757d;
-    font-size: 14px;
-    display: block;
-    padding-top: 5px;
-    text-decoration: line-through;
-}
-
-.card__total-price {
-    color: #46b1ef;
-}
-
-.card__discount {
-    position: absolute;
-    background: #ff6e6e;
-    color: #fff;
-    width: 30px;
-    height: 30px;
+    margin-top: 7%;
+    color: #000000;
+    font-weight:bold;
+    font-size: 15px;
     text-align: center;
-    line-height: 30px;
-    border-radius: 3px;
-    z-index: 2;
-    top: 16px;
-    right: 55px;
-    font-size: 13px;
-    padding-top: 4px;
+}
+
+.card_content {
+    margin-top: 5%;
+    color: #272829;
+    font-size: 13.5px;
+    text-align: center;
 }
 
 .card:hover {
@@ -1956,7 +1938,7 @@ table tbody tr:nth-child(2n+1) {
     background-color:ghostwhite;
     padding: 20px 20px 20px 20px;
     width: 95%;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 4px;
     margin: auto;
 }
