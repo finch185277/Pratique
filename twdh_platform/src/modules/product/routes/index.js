@@ -10,13 +10,8 @@ export default [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/material',
-    name: 'Material',
-    component: () => import(/* webpackChunkName: "material" */ '../views/Material.vue')
-  },
-  {
-    path: '/product/:id',
-    name: 'Product',
-    component: () => import(/* webpackChunkName: "product" */ '../views/Product.vue')
+    path: '/system',
+    name: 'System',
+    component: () => import(/* webpackChunkName: "system" */ '../views/System.vue')
   },
 ]

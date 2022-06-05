@@ -26,7 +26,7 @@
                 >
               </li>  
                <li class="navbar__item">
-                <router-link :to="{ name: 'Material' }" class="navbar__link"
+                <router-link :to="{ name: 'System' }" class="navbar__link"
                   >臺灣史料脈絡分析系統</router-link
                 >
               </li>
