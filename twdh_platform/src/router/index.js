@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import productRoutes from '@/modules/product/routes'
+import portalRoutes from '@/modules/portal/routes'
 
 const routes = [
-  ...productRoutes
+  ...portalRoutes
 ]
 
 const router = createRouter({
