@@ -1,9 +1,14 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import portalRoutes from '@/modules/portal/routes'
+import opendataRoutes from '@/modules/opendata/routes'
+import tdocuskyRoutes from '@/modules/tdocusky/routes'
+
 
 const routes = [
-  ...portalRoutes
+  ...portalRoutes,
+  ...opendataRoutes,
+  ...tdocuskyRoutes
 ]
 
 const router = createRouter({
