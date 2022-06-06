@@ -14,4 +14,9 @@ export default [
     name: 'System',
     component: () => import(/* webpackChunkName: "system" */ '../views/System.vue')
   },
+  {
+    path: '/relatedlink',
+    name: 'RelatedLink',
+    component: () => import(/* webpackChunkName: "relatedlink" */ '../views/RelatedLink.vue')
+  },
 ]
