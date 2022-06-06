@@ -57,12 +57,7 @@
                   :to="{ name: 'Login' }"
                   class="header__account-link"
                   >登入</router-link
-                >
-                <router-link
-                  :to="{ name: 'Register' }"
-                  class="header__account-link"
-                  >帳號申請</router-link
-                >
+                >         
               </div>
             </div>
           </div>

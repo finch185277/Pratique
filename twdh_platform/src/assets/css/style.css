@@ -216,16 +216,16 @@ ul li {
 }
 
 .btn--brand {
-    background: #46b1ef;
+    background: #757471;
     color: #fff;
 }
 
 .btn--brand:hover {
-    background: #2893d6;
+    background: #3a3a39;
 }
 
 .btn--boxshadow {
-    box-shadow: 0 0 0 4px rgba(72, 186, 221, 0.2);
+    box-shadow: 0 0 0 0.5px rgba(39, 39, 39, 0.2);
 }
 
 .w--100 {
