@@ -136,36 +136,17 @@ ul li {
     display: block;
 }
 
-.header__basket-icon, .header__account-icon, .header__menu {
+.header__account-icon {
     padding: 8px 14px 5px;
     border-radius: 3px;
     background: #f4f4f4;
     cursor: pointer;
 }
 
-.header__menu {
-    margin-left: 10px;
-    display: none;
-}
-
-.header__menu::before {
-    content: '\e086';
-}
-
-.header__menu--is-active::before {
-    content: '\e042';
-    color: #46b1ef;
-}
-
 .navbar__action {
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-}
-
-.header__basket-icon:before {
-    content: '\e109';
-    font-size: 16px;
 }
 
 .header__account-icon:before {
@@ -176,24 +157,6 @@ ul li {
 .header__account {
     margin-left: 10px;
     position: relative;
-}
-
-.header__basket {
-    position: relative;
-}
-
-.header__basket-count {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    line-height: 20px;
-    text-align: center;
-    position: absolute;
-    left: -7px;
-    top: -7px;
-    color: #fff;
-    background: #46b1ef;
-    user-select: none;
 }
 
 .header__dropdown {
@@ -242,53 +205,6 @@ ul li {
     display: flex;
 }
 
-.header__basket-item {
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    padding: 10px;
-}
-
-.header__basket-link {
-    width: 90px;
-    height: 90px;
-    border: 1px solid rgba(0, 0, 0, .1);
-}
-
-.header__basket-img {
-    width: 100%;
-}
-
-.header__basket-details {
-    margin-left: 15px;
-    text-align: left;
-}
-
-.header__basket-title {
-    font-size: 13px;
-    color: #6c757d;
-    margin-bottom: 4px;
-}
-
-.header__basket-price {
-    font-size: 13px;
-    color: #46b1ef;
-    margin-bottom: 8px;
-}
-
-.header__basket-remove {
-    padding: 1px 6px;
-    color: #6c757d;
-    background: #f4f4f4;
-    font-size: 11px;
-}
-
-.header__basket-remove:before {
-    content: '\e041';
-    font-size: 14px;
-    margin-right: 3px;
-}
-
 .btn {
     padding: 7px 25px;
     cursor: pointer;
@@ -315,20 +231,14 @@ ul li {
     width: 100%;
 }
 
-.header__basket-btn {
-    border: 1px solid rgba(0, 0, 0, .1);
-    padding: 20px;
-    margin-top: 10px;
-}
-
 .text--6c757d {
     color: #6c757d;
 }
 
 .header__account-link {
-    font-size: 13px;
+    font-size: 16px;
     width: 100%;
-    text-align: right;
+    text-align: center;
     padding: 8px 20px;
     color: #6c757d;
 }

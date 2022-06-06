@@ -27,7 +27,7 @@
               </li>
               <li class="navbar__item">
                 <router-link :to="{ name: 'OpendataIndex' }" class="navbar__link"
-                  >Opendata</router-link
+                  >Open Data</router-link
                 >
               </li>   
               <li class="navbar__item">
@@ -37,7 +37,32 @@
               </li>       
             </ul>
           </div>
-        </div>
+
+          <div class="header__account">
+            <span
+              class="header__account-icon"
+              @click="showDropDownAccount"
+            ></span>
+            <div
+              class="header__dropdown header__dropdown--w200"
+              :class="{ 'header__dropdown--is-active': isAccountDropDown }"
+            >
+              <div class="header__dropdown-content">
+                <router-link
+                  :to="{ name: 'Login' }"
+                  class="header__account-link"
+                  >登入</router-link
+                >
+                <router-link
+                  :to="{ name: 'Register' }"
+                  class="header__account-link"
+                  >帳號申請</router-link
+                >
+              </div>
+            </div>
+          </div>
+         
+        </div>    
       </div>
     </div>
   </header>
