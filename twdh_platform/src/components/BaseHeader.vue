@@ -34,7 +34,12 @@
                 <router-link :to="{ name: 'TdocuSkyIndex' }" class="navbar__link"
                   >T-DocuSky</router-link
                 >
-              </li>       
+              </li>  
+              <li class="navbar__item">
+                <router-link :to="{ name: 'RelatedLink' }" class="navbar__link"
+                  >相關連結</router-link
+                >
+              </li>      
             </ul>
           </div>
 
