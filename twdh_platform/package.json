@@ -13,9 +13,12 @@
     "core-js": "^3.6.5",
     "moment": "^2.29.1",
     "swiper": "^6.5.0",
+    "vee-validate": "^4.3.5",
     "vue": "^3.0.0",
+    "vue-cookies": "1.8.1",
     "vue-router": "^4.0.0",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "vue3-simple-alert": "1.0.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

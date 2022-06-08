@@ -1,22 +1,18 @@
 export default {
   namespaced: true,
   state: () => ({
-    user: { name: "tofiq", id: 1 },
-    isLoggedIn: true
+    userName: null,
   }),
   getters: {
-    name: (state, getters, rootState, rootGetters) => {
-      return state.user.name
-    }
   },
   mutations: {
-    SET_USER(state) {
-      state.user.name = 'mohammad'
-    }
+    setUserName(state, userName){
+      state.userName = userName;
+    },
+    clearUserName(state){
+      state.userName = null;
+    },
   },
   actions: {
-    userLog(ctx, payload) {
-      console.log(payload)
-    }
   }
 }

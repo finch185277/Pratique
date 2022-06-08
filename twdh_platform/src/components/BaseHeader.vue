@@ -4,8 +4,7 @@
       <div class="navbar">
         <div class="navbar__row">
           <div
-            class="navbar__items"
-            :class="{ 'navbar__items--is-active': showSideBar }"
+            class="navbar__items"          
           >
             <ul class="navbar__ul">
               <li class="navbar__item">
@@ -43,6 +42,10 @@
             </ul>
           </div>
 
+          <div>
+            <div class="showUser">{{ showLoginUser }}</div>
+          </div>
+
           <div class="header__account">
             <span
               class="header__account-icon"
@@ -52,11 +55,15 @@
               class="header__dropdown header__dropdown--w200"
               :class="{ 'header__dropdown--is-active': isAccountDropDown }"
             >
-              <div class="header__dropdown-content">
+              <div class="header__dropdown-content" v-if="this.$store.state.user.userName">
+                <div class="header__account-link" v-on:click="handleLogout">登 出</div>        
+              </div>
+              <div class="header__dropdown-content" v-else="this.$store.state.user.userName">
                 <router-link
                   :to="{ name: 'Login' }"
                   class="header__account-link"
-                  >登入</router-link
+                  @click="showDropDownAccount"
+                  >登 入</router-link
                 >         
               </div>
             </div>
@@ -69,62 +76,60 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters } from 'vuex'
+import VueSimpleAlert from "vue3-simple-alert";
+import VueCookies from 'vue-cookies';
+import axios from 'axios';
+
 
 export default {
   name: 'BaseHeader',
-
+  
   data: () => ({
-    isBasketDropDown: false,
     isAccountDropDown: false,
-    showSideBar: false
   }),
 
   computed: {
-    ...mapState('cart', ['items']),
-    ...mapGetters('cart', ['count'])
+    showLoginUser() {
+      return  this.$store.state.user.userName;
+    },
   },
 
   methods: {
-    showDropDownBasket() {
-      this.isAccountDropDown = false
-      this.isBasketDropDown = !this.isBasketDropDown
-    },
     showDropDownAccount() {
-      this.isBasketDropDown = false
       this.isAccountDropDown = !this.isAccountDropDown
     },
-    eventListener(event) {
-      if (!event.target.closest('.header__basket,.header__account')) {
-        this.isBasketDropDown = false
-        this.isAccountDropDown = false
-      }
-      if (!event.target.closest('.navbar')) {
-        this.showSideBar = false
+    handleLogout() {
+      VueSimpleAlert.confirm("請問您確定要登出嗎？").then(() => {
+        let formData = new FormData();
+        formData.append("DocuSky_SID", $cookies.get("DocuSky_SID"));
+        formData.append("loginName", $cookies.get("username"));
 
-        this.$emit('show-sidebar', false)
-      }
-    },
-    toggleSidebar() {
-      this.showSideBar = !this.showSideBar
+        axios({
+          credentials: "include",
+          method: "post",
+          url: "https://skolem.csie.ntu.edu.tw/DocuSky/webApi/userLogoutJson.php",
+          data: formData,
+          headers: { "Content-Type": "multipart/form-data" },
+        });   
+        this.$store.commit('user/clearUserName');
+        this.showDropDownAccount();
 
-      this.$emit('show-sidebar', this.showSideBar)
+
+        // 清空 Cookie
+        $cookies.remove("username");
+        $cookies.remove("display_name");
+        $cookies.remove("DocuSky_SID");
+        
+        // 轉址到首頁
+        this.$router.push("/");
+      });
     },
-    formattedPrice(price) {
-      return new Intl.NumberFormat('en', {
-        style: 'currency',
-        currency: 'USD'
-      }).format(price)
-    },
-    ...mapActions('cart', ['removeItem'])
   },
 
   mounted() {
-    document.addEventListener('click', this.eventListener)
   },
 
   unmounted() {
-    document.removeEventListener('click', this.eventListener)
   }
 }
 </script>
