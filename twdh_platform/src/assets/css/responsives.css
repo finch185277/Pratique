@@ -18,11 +18,7 @@
         transition: transform 200ms ease;
         overflow-y: auto;
     }
-    
-    .navbar__items--is-active {
-        transform: translateX(0);
-    }
-    
+     
     .navbar__subset {
         position: unset;
         box-shadow: unset;
@@ -154,12 +150,12 @@
         justify-content: flex-end;
     }
     
-    .header__basket .header__dropdown {
+    .header__dropdown {
         left: -147px !important;
         min-width: 285px !important;
     }
     
-    .header__basket .header__dropdown::before {
+    .header__dropdown::before {
         left: 56% !important;
     }
     

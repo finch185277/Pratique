@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <span  style="margin-left: 40px; margin-bottom: 20px;">  <h2>平台介紹</h2></span>
+    <span  style="margin-left: 40px; margin-top: 20px; margin-bottom: 20px;">  <h2>平台介紹</h2></span>
     <div class="introduction">
       歡迎使用<span style="font-weight: bold"><h3>&nbsp;&nbsp;臺灣史料數位人文學術研究平台！</h3></span><br>
       數位人文是運用數位資源，透過資訊科技從事人文研究的新興研究方法。本平台於 2022 年成立，是臺灣第一個以臺灣史料為主軸所建構的數位人文學術研究平台。
@@ -9,23 +9,19 @@
       並整合 2018 年推出的「DocuSky 數位人文學術研究平台」，提供 T-DocuSky 應用，可進行個人化材料整理、使用與分析，完善臺灣史料學術研究之個人化數位環境設施和一站式整合之數位人文服務。				
     </div>
     
-    <span  style="margin-left: 40px; margin-top: 5%; margin-bottom: 20px;">  <h2>教學文件</h2></span>
+    <span  style="margin-left: 40px; margin-top: 3.8%; margin-bottom: 20px;">  <h2>教學文件</h2></span>
     <div class="introduction">
 			xxx.pdf
     </div>
-    <span  style="margin-bottom: 8.5%;"></span>
+    <span  style="margin-bottom: 8%;"></span>
   </div>
 </template>
 
 <script>
 import { computed } from 'vue'
-// import { useStore } from 'vuex'
+
 
 export default {
   name: 'About',
-
-  setup() {
-    // const store = useStore()
-  }
 }
 </script>

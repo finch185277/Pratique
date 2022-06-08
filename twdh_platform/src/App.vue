@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <BaseHeader @show-sidebar="handleSidebar" />
+    <BaseHeader  />
     <router-view />
-    <BaseFooter :showSideBar="isShowSideBar" />
+    <BaseFooter  />
   </div>
 </template>
 
 <script>
 import BaseHeader from './components/BaseHeader'
 import BaseFooter from './components/BaseFooter'
-// import user from '@/modules/user/store'
+
+
 export default {
   data: () => ({
-    isShowSideBar: false
   }),
 
   components: {
@@ -21,15 +21,9 @@ export default {
   },
 
   methods: {
-    handleSidebar(showSideBar) {
-      this.isShowSideBar = showSideBar
-    }
   },
 
   created() {
-    // if (! this.$store.hasModule('userName')) {
-    // this.$store.registerModule('userName', user)
-    // }
   }
 }
 </script>

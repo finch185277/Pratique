@@ -243,6 +243,7 @@ ul li {
     text-align: center;
     padding: 8px 20px;
     color: #6c757d;
+    cursor: pointer;
 }
 
 .header__account-link:hover {
@@ -1906,4 +1907,13 @@ a.logo {
 .tbody_link_span:hover {
     background-color: #bf9a0b; 
     border-radius: 2px 2px 2px 2px;
+}
+
+.showUser {
+    font-size: 20px;
+    color:#bf9a0b;
+    font-weight: 580;
+    margin-left: 115%;
+    font-style:italic;
+    width: 100%;
 }

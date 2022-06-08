@@ -29,7 +29,7 @@
 import { Form, Field } from "vee-validate";
 import axios from 'axios';
 import VueSimpleAlert from "vue3-simple-alert";
-import VueCookies from 'vue-cookies'
+import VueCookies from 'vue-cookies';
 
 
 export default {
@@ -40,7 +40,7 @@ export default {
   },
 
   methods: {
-    handleLogin(user) {
+    async handleLogin(user) {
       const storageObj = {};
 
       let formData = new FormData();
@@ -49,14 +49,14 @@ export default {
       axios({
         credentials: "include",
         method: "post",
-        url: "https://skolem.csie.ntu.edu.tw//DocuSky/webApi/userLoginJson.php",
+        url: "https://skolem.csie.ntu.edu.tw/DocuSky/webApi/userLoginJson.php",
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
       })
-      .then((res) => {
-         const code =  parseInt(res.data.code);
+      .then((res0) => {
+         const code =  parseInt(res0.data.code);
           if (code == 0) {
-            const messageUserLogin = res.data.message;
+            const messageUserLogin = res0.data.message;
             const messageArr = messageUserLogin.split("=");
             // DocuSky_SID
             storageObj[messageArr[0]] = messageArr[1]; 
@@ -64,12 +64,12 @@ export default {
             axios({
               credentials: "include",
               method: "get",
-              url: "https://skolem.csie.ntu.edu.tw//DocuSky/webApi/getUserProfileJson.php",
+              url: "https://skolem.csie.ntu.edu.tw/DocuSky/webApi/getUserProfileJson.php",
               params: { username: user.email, DocuSky_SID: storageObj.DocuSky_SID },
               headers: { "Content-Type": "application/json" },
             })
-            .then((res) => {
-              const messageUserProfile = res.data.message;
+            .then((res1) => {
+              const messageUserProfile = res1.data.message;
               // username
               storageObj.username = messageUserProfile.username;
               // display_name
@@ -79,12 +79,15 @@ export default {
               $cookies.set("username", storageObj.username, "58min");
               $cookies.set("display_name", storageObj.display_name, "58min");
               $cookies.set("DocuSky_SID", storageObj.DocuSky_SID, "58min");
-            })          
+
+              this.$store.commit('user/setUserName', `${res1.data.message.display_name} ~`);
+            })    
+
             VueSimpleAlert.alert("登入成功!");  
-            // 轉址到首頁
-            this.$router.push("/");
+            // 轉址到前一頁
+            this.$router.go(-1);
           } else {          
-            VueSimpleAlert.alert("登入失敗，請檢查帳號密碼輸入正確後再重新登入。");
+            VueSimpleAlert.alert("登入失敗，請檢查帳號密碼輸入正確後重新登入。");
           }
       }).catch((error) => { console.log(error); });
     },
