@@ -1,4 +1,7 @@
 <template>
+  <div class="wrap-inner innertube">
+    <h1 class="serif_type">臺灣史料數位人文學術研究平台</h1><hr class="divider">
+  </div>
   <div class="about">
     <span  style="margin-left: 40px; margin-top: 20px; margin-bottom: 20px;">  <h2>平台介紹</h2></span>
     <div class="introduction">
