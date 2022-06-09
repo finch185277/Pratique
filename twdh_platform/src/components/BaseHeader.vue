@@ -99,6 +99,8 @@ export default {
       this.isAccountDropDown = !this.isAccountDropDown
     },
     handleLogout() {
+      this.showDropDownAccount();
+      
       VueSimpleAlert.confirm("請問您確定要登出嗎？").then(() => {
         let formData = new FormData();
         formData.append("DocuSky_SID", $cookies.get("DocuSky_SID"));
@@ -112,9 +114,7 @@ export default {
           headers: { "Content-Type": "multipart/form-data" },
         });   
         this.$store.commit('user/clearUserName');
-        this.showDropDownAccount();
-
-
+      
         // 清空 Cookie
         $cookies.remove("username");
         $cookies.remove("display_name");
