@@ -35,6 +35,10 @@
                 >
               </li>  
               <li class="navbar__item">
+                <router-link :to="{ name: 'SimpleWorkFlowIndex' }" class="navbar__link"
+                  >SWF</router-link>
+              </li>
+              <li class="navbar__item">
                 <router-link :to="{ name: 'RelatedLink' }" class="navbar__link"
                   >相關連結</router-link
                 >
