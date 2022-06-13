@@ -1852,7 +1852,7 @@ table tbody tr:nth-child(2n+1) {
 
 a.logo { 
     cursor: default; 
-    display:block; 
+    display: block; 
     background: url(../img/twPortal_logo_m.png) no-repeat left top; 
     width: 100%; 
     height: 33px; 
@@ -1964,4 +1964,14 @@ a.logo {
   
   .button_system_next:focus {
     box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  }
+
+  a.architecture_img { 
+    cursor: default; 
+    display: block; 
+    background: url(../img/architecture.png) no-repeat left top; 
+    width: 100%; 
+    height: 580px; 
+    text-align: center;
+    margin-left: 6%;
   }
