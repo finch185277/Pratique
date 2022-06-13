@@ -92,7 +92,6 @@ export default {
               storageObj.display_name = messageUserProfile.display_name;
               
               // storageObj 存入 Cookie
-              $cookies.set("username", storageObj.username, "58min");
               $cookies.set("display_name", storageObj.display_name, "58min");
               $cookies.set("DocuSky_SID", storageObj.DocuSky_SID, "58min");
 
