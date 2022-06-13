@@ -56,7 +56,7 @@
               :class="{ 'header__dropdown--is-active': isAccountDropDown }"
             >
               <div class="header__dropdown-content" v-if="this.$store.state.user.userName">
-                <div class="header__account-link" v-on:click="handleLogout">登 出</div>  
+                <div class="header__account-link-div" v-on:click="handleLogout">登 出</div>  
                 <router-link
                   :to="{ name: 'ResetPass' }"
                   class="header__account-link"
@@ -116,7 +116,7 @@ export default {
       VueSimpleAlert.confirm("請問您確定要登出嗎？").then(() => {
         let formData = new FormData();
         formData.append("DocuSky_SID", $cookies.get("DocuSky_SID"));
-        formData.append("loginName", $cookies.get("username"));
+        formData.append("loginName", $cookies.get("display_name"));
 
         axios({
           credentials: "include",
@@ -128,7 +128,6 @@ export default {
         this.$store.commit('user/clearUserName');
       
         // 清空 Cookie
-        $cookies.remove("username");
         $cookies.remove("display_name");
         $cookies.remove("DocuSky_SID");
         
